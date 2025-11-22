@@ -13,7 +13,6 @@ allprojects {
     }
 }
 
-
 subprojects {
     plugins.withId("io.gitlab.arturbosch.detekt") {
         tasks.build.configure {
