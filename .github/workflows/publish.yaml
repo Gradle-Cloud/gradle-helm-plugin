@@ -44,13 +44,13 @@ jobs:
       # Optimize Gradle execution
       # https://github.com/marketplace/actions/build-with-gradle
       - name: Setup Gradle
-        uses: gradle/actions/setup-gradle@v5
-
-      # Build the project by simply running the command line
-      - name: Publish the project
         with:
           # disable cache for publication. We build from scratch here, so let's avoid having a theoretical vulnerability when cache entry was put in a declined PR, however reused by this build
           cache-disabled: true
+        uses: gradle/actions/setup-gradle@v5
+
+      # Build and publish the project by simply running the command line
+      - name: Publish the project
         # Several items:
         # 1. Secrets are uploaded via https://docs.github.com/en/actions/security-guides/encrypted-secrets
         #    Correct them on https://github.com/Gradle-Cloud/gradle-helm-plugin/settings/environments/10298625189/edit
