@@ -13,6 +13,12 @@ jobs:
     strategy:
       fail-fast: true
     runs-on: ubuntu-latest
+
+    environment:
+      # This job must only run in Publishing environment. It is protected from the majority of runs, which prevents Gradle secrets leakage
+      name: Publishing
+      url: https://github.com/Gradle-Cloud/gradle-helm-plugin/settings/environments/10298625189/edit
+
     steps:
       # https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-java-with-gradle#using-the-gradle-starter-workflow
       - name: Harden the runner (Audit all outbound calls)
@@ -48,5 +54,6 @@ jobs:
         with:
           gradle-home-cache-cleanup: true
           # Secrets are uploaded via https://docs.github.com/en/actions/security-guides/encrypted-secrets
-          # Correct them on https://github.com/Citi/gradle-helm-plugin/settings/secrets/actions
+          # Correct them on https://github.com/Gradle-Cloud/gradle-helm-plugin/settings/environments/10298625189/edit
+          # Note!!!: these secrets must be in Publishing environment only
           arguments: publishPlugins -Pgradle.publish.key=${{ secrets.GRADLE_PUBLISH_KEY }} -Pgradle.publish.secret=${{ secrets.GRADLE_PUBLISH_SECRET }} --stacktrace
