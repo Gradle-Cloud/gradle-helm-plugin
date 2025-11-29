@@ -50,5 +50,6 @@ jobs:
         uses: gradle/actions/setup-gradle@v5
 
       # Build the project by simply running the command line
+      # No need to use daemon (this is run once container), however we print detailed logs and stacktraces
       - name: Assemble the project
-        run: ./gradlew build --stacktrace --info
+        run: ./gradlew build --stacktrace --info --no-daemon
