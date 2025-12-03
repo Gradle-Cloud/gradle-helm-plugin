@@ -34,17 +34,17 @@
 
 ## Quick Start
 
-Add `io.github.gradle-cloud.helm` to your Gradle project:
+Add `io.github.build.extensions.oss.helm` to your Gradle project:
 
 ```gradle
 plugins {
-    id 'io.github.gradle-cloud.helm' version '2.2.0'
+    id 'io.github.build.extensions.oss.helm' version '2.2.0'
 }
 ```
 
 ```gradle
 plugins {
-    id("io.github.gradle-cloud.helm") version "2.2.0"
+    id("io.github.build.extensions.oss.helm") version "2.2.0"
 }
 ```
 
@@ -64,7 +64,7 @@ plugins {
 This repository is a fork of [Citi/gradle-helm-plugin](https://github.com/Citi/gradle-helm-plugin), which is a
 of [unbroken-dome/gradle-helm-plugin](https://github.com/unbroken-dome/gradle-helm-plugin).
 
-The version [v2.2.0](https://github.com/Gradle-Cloud/gradle-helm-plugin/releases/tag/v2.2.0) has exactly the same code
+The version [v2.2.0](https://github.com/build.extensions.oss/gradle-helm-plugin/releases/tag/v2.2.0) has exactly the same code
 with version [2.2.0](https://github.com/Citi/gradle-helm-plugin/releases/tag/2.2.0)
 of [Citi/gradle-helm-plugin](https://github.com/Citi/gradle-helm-plugin). Therefore, first please use that version. All
 Java/Kotlin packages are the same, so the plugin should be fully compatible.
